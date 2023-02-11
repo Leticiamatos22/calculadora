@@ -5,8 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/CSS/calculadora.css">
 </head>
 <body>
+    <header>
+        <h1>Calculadora Salário Bruto</h1>
+    </header>
+    <main>
+        <div class="caixas">
+            <form>
+                <label for="salarioBruto">Salário:</label>
+                <input type="text" name="salarioBruto" id="salarioBruto">
+                <label for="dependentes">Dependentes:</label>
+                <input type="text" name="dependentes" id="dependentes">
+                <div>
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox">Vale Transporte</label>
+                </div>
+                <input id="button" type="submit" value="Calcular">
+            
+            </form>
+            <div class="resultado">
+                <table>
+                    <tr>
+                      <td>Salário Bruto</td>
+                      <td>Maria Anders</td>
+                    </tr>
+                    <tr>
+                      <td>INSS</td>
+                      <td>Francisco Chang</td>
+                    </tr>
+                    <tr>
+                        <td>IRRF</td>
+                        <td>Francisco Chang</td>
+                    </tr>
+                    <tr>
+                        <td>Vale Transporte</td>
+                        <td>Francisco Chang</td>
+                    </tr>
+                    <tr>
+                        <td>Salário Líquido</td>
+                        <td>Francisco Cha</td>
+                    </tr>
+                </table>
+                <input id="button" type="submit" value="Resetar">
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Todos os direitos reservados</p>
+    </footer>
     
 </body>
+<script src="/JS/calculadora.js"></script>
 </html>
