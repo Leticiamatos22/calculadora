@@ -5,52 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/CSS/calculadora.css">
+    <link rel="stylesheet" href="./CSS/calculadora.css">
 </head>
 <body>
     <header>
-        <h1>Calculadora Salário Bruto</h1>
+        <h1>Calculadora Trabalhista</h1>
     </header>
     <main>
-        <div class="caixas">
-            <form>
-                <label for="salarioBruto">Salário:</label>
-                <input type="text" name="salarioBruto" id="salarioBruto">
-                <label for="dependentes">Dependentes:</label>
-                <input type="text" name="dependentes" id="dependentes">
-                <div>
-                    <input type="checkbox" name="checkbox" id="checkbox">
+        <div class="entrada">
+            <form id="formentrada">
+                <label for="salarioBruto">Salário:</label><br>
+                <input type="number" name="salarioBruto" id="salarioBruto" required><br>
+
+                <label for="dependentes">Dependentes:</label><br>
+                <input type="number" name="dependentes" id="dependentes"><br>
+
+                <form>
                     <label for="checkbox">Vale Transporte</label>
-                </div>
-                <input id="button" type="submit" value="Calcular">
-            
+                    <input type="checkbox" name="checkbox" id="checkbox">       
+                </form>
             </form>
-            <div class="resultado">
-                <table>
-                    <tr>
-                      <td>Salário Bruto</td>
-                      <td>Maria Anders</td>
-                    </tr>
-                    <tr>
-                      <td>INSS</td>
-                      <td>Francisco Chang</td>
-                    </tr>
-                    <tr>
-                        <td>IRRF</td>
-                        <td>Francisco Chang</td>
-                    </tr>
-                    <tr>
-                        <td>Vale Transporte</td>
-                        <td>Francisco Chang</td>
-                    </tr>
-                    <tr>
-                        <td>Salário Líquido</td>
-                        <td>Francisco Cha</td>
-                    </tr>
-                </table>
-                <input id="button" type="submit" value="Resetar">
-            </div>
-        </div>
+            <button class="button" onclick="calcular();">Calcular</button>
+
+        </div> 
+        <div class="saida" id="saida"> 
+            <table>
+                <tr>
+                    <td>Salário Bruto: </td>
+                    <td id="salarioBrutosaida"> R$ </td>
+                </tr>
+                <tr>
+                    <td>INSS: </td>
+                    <td id="inssSaida"></td>
+                </tr>
+                <tr>
+                    <td>IRRF: </td>
+                    <td id="irrfSaida"></td>
+                </tr>
+                <tr>
+                    <td>Vale Transporte: </td>
+                    <td id="valeTransporteSaida"></td>
+                </tr>
+                <tr>
+                    <td>Descontos: </td>
+                    <td id="descontosSaida"></td>
+                </tr>
+                <tr>
+                    <td>Salário Líquido: </td>
+                    <td id="salarioLiquidosaida"></td>
+                </tr>
+              </table>
+            <!--<form id="formsaida">
+                <h3>Resultado</h3>
+                <p id="salarioBrutosaida">Salario Bruto: R$  </p>
+                <p id="inssSaida">Inss a recolher: R$  </p>
+                <p id="irrfSaida">Irrf a recolher: R$  </p>
+                <p id="valeTransporteSaida">Vale Transporte: R$  </p>
+                <p id="descontosSaida">Descontos: R$  </p>
+                <p id="salarioLiquidosaida">Salario Liquido: R$  </p> 
+            </form>  -->
+            <input type="reset" form="formentrada" onclick="ocultar()" class="btReset" value="Recalcular">
+        </div>   
     </main>
     
     <footer>
@@ -58,5 +73,5 @@
     </footer>
     
 </body>
-<script src="/JS/calculadora.js"></script>
+    <script src="./JS/calculadora.js"></script>
 </html>
