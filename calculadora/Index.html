@@ -15,9 +15,9 @@
         <div class="entrada">
             <form id="formentrada">
                 <label for="salarioBruto">Salário:</label><br>
-                <input type="number" name="salarioBruto" id="salarioBruto" required><br>
+                <input type="number" name="salarioBruto" id="salarioBruto"><br>
 
-                <label for="dependentes">Dependentes:</label><br>
+                <label for="dependentes">Dependentes:</label><br> 
                 <input type="number" name="dependentes" id="dependentes"><br>
 
                 <form>
@@ -25,14 +25,13 @@
                     <input type="checkbox" name="checkbox" id="checkbox">       
                 </form>
             </form>
-            <button class="button" onclick="calcular();">Calcular</button>
-
+            <button class="button" onclick= "calcular()">Calcular</button>
         </div> 
         <div class="saida" id="saida"> 
             <table>
                 <tr>
                     <td>Salário Bruto: </td>
-                    <td id="salarioBrutosaida"> R$ </td>
+                    <td id="salarioBrutosaida"> R$0.00 </td>
                 </tr>
                 <tr>
                     <td>INSS: </td>
@@ -55,16 +54,7 @@
                     <td id="salarioLiquidosaida"></td>
                 </tr>
               </table>
-            <!--<form id="formsaida">
-                <h3>Resultado</h3>
-                <p id="salarioBrutosaida">Salario Bruto: R$  </p>
-                <p id="inssSaida">Inss a recolher: R$  </p>
-                <p id="irrfSaida">Irrf a recolher: R$  </p>
-                <p id="valeTransporteSaida">Vale Transporte: R$  </p>
-                <p id="descontosSaida">Descontos: R$  </p>
-                <p id="salarioLiquidosaida">Salario Liquido: R$  </p> 
-            </form>  -->
-            <input type="reset" form="formentrada" onclick="ocultar()" class="btReset" value="Recalcular">
+            <input type="reset" form="formentrada" onclick="ocultar()" onmouseup="resetar() "class="btReset" value="Recalcular">
         </div>   
     </main>
     

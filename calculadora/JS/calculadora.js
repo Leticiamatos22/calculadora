@@ -58,7 +58,15 @@ function calcular(){
      window.document.getElementById("salarioLiquidosaida").innerHTML = "R$ " + salarioLiquido.toFixed(2)
 
     //Mostrar display
-    document.getElementById("saida").style.display = "flex";
+    document.getElementById("saida").style.display = "flex"; 
+    document.getElementById("salarioBruto").readOnly = true;
+    document.getElementById("dependentes").readOnly = true;
+
+}
+function resetar(){
+    document.getElementById("salarioBruto").readOnly = false;
+    document.getElementById("dependentes").readOnly = false;
+
 }
 function ocultar(){
     document.getElementById("saida").style.display = "none";
