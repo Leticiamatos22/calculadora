@@ -1,9 +1,8 @@
-
 function calcular(){
-
     //Declaração Variáveis
     let salarioBruto = window.document.getElementById("salarioBruto").value
     let dependentes = window.document.getElementById("dependentes").value
+    let inss, baseIrrf, irrf, valeTransporte, descontos, salarioLiquido
    
     console.log("SalarioBruto = "+salarioBruto)
     window.document.getElementById("salarioBrutosaida").innerHTML = "R$ " + salarioBruto;
@@ -20,12 +19,11 @@ function calcular(){
     }else{
         inss = salarioBruto * 0.075
     } 
-
     console.log(inss)
-    window.document.getElementById("inssSaida").innerHTML = "R$ " + inss
+    window.document.getElementById("inssSaida").innerHTML = "R$ " + inss.toFixed(2)
 
     //calculo base do IRRF
-    let baseIrrf = salarioBruto - inss - 189.59 * dependentes
+    baseIrrf = salarioBruto - inss - 189.59 * dependentes
     // calculo do IRRF
     if(baseIrrf<= 1903.98){
         irrf=0
@@ -38,27 +36,26 @@ function calcular(){
     }else{
         irrf= baseIrrf * (27.5 / 100) - 869.36
     }
-
     console.log(irrf)
-    window.document.getElementById("irrfSaida").innerHTML = "R$ " + irrf
+    window.document.getElementById("irrfSaida").innerHTML = "R$ " + irrf.toFixed(2);
 
     //calculo do vale transporte
-    let valeTransporte = window.document.getElementById("checkbox").checked
+    valeTransporte = window.document.getElementById("checkbox").checked
     if(valeTransporte == true){
         valeTransporte = salarioBruto * 0.06
         console.log(valeTransporte)
-        window.document.getElementById("valeTransporteSaida").innerHTML = "R$ " + valeTransporte
+        window.document.getElementById("valeTransporteSaida").innerHTML = "R$ " + valeTransporte.toFixed(2)
     }else{
         valeTransporte = 0.00
         console.log(valeTransporte)
-        window.document.getElementById("valeTransporteSaida").innerHTML = "R$ " + valeTransporte
+        window.document.getElementById("valeTransporteSaida").innerHTML = "R$ " + valeTransporte.toFixed(2)
     }
 
     // calculo dos descontos e Salário Líquido
-    let descontos = inss + irrf + valeTransporte
-    window.document.getElementById("descontosSaida").innerHTML = "R$ " + descontos
-    let salarioLiquido = salarioBruto - descontos
-     window.document.getElementById("salarioLiquidosaida").innerHTML = "R$ " + salarioLiquido
+    descontos = inss + irrf + valeTransporte
+    window.document.getElementById("descontosSaida").innerHTML = "R$ " + descontos.toFixed(2)
+    salarioLiquido = salarioBruto - descontos
+     window.document.getElementById("salarioLiquidosaida").innerHTML = "R$ " + salarioLiquido.toFixed(2)
 
     //Mostrar display
     document.getElementById("saida").style.display = "flex";
