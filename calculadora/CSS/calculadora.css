@@ -53,9 +53,10 @@ main {
     color: white;
     font-size: 15px;
     font-weight: bold;
+    transition: 0.2px;
 }
 button:hover {
-    box-shadow: 0 0 40px 40px #050202 inset;
+    box-shadow: 0px 3px 40px  #050202 inset;
     background-position: 100px;
 }
 .saida{
@@ -69,6 +70,10 @@ button:hover {
     padding: 2%;
     gap: 20px;
 }
+#saida{
+    justify-content: left;
+    transition: all 1.0s ease-out; 
+}
 table{
     align-items:baseline;
     line-height: 30px;
@@ -77,6 +82,9 @@ table{
 td{
     width: 300px ;
     border-bottom: 1px solid #ddd;
+}
+tr:hover{
+    background-color: rgb(62, 15, 138);
 }
 .btReset{
     background-color: rgba(30, 33, 122, 0.772);

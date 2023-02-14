@@ -1,4 +1,5 @@
 function calcular(){
+  
     //Declaração Variáveis
     let salarioBruto = window.document.getElementById("salarioBruto").value
     let dependentes = window.document.getElementById("dependentes").value
