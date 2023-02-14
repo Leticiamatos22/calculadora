@@ -1,5 +1,12 @@
+var btCalcular = document.getElementById("button");
+btCalcular.addEventListener("click", calcular);
+
+var btreset = document.getElementById("btreset");
+btreset.addEventListener("click", ocultar);
+btreset.addEventListener("click", resetar);
+
+
 function calcular(){
-  
     //Declaração Variáveis
     let salarioBruto = window.document.getElementById("salarioBruto").value
     let dependentes = window.document.getElementById("dependentes").value
@@ -61,6 +68,8 @@ function calcular(){
 
     //Mostrar display
     document.getElementById("saida").style.display = "flex"; 
+
+    // Travar formulário
     document.getElementById("salarioBruto").readOnly = true;
     document.getElementById("dependentes").readOnly = true;
 
@@ -68,9 +77,13 @@ function calcular(){
 function resetar(){
     document.getElementById("salarioBruto").readOnly = false;
     document.getElementById("dependentes").readOnly = false;
-
 }
 function ocultar(){
     document.getElementById("saida").style.display = "none";
 }
+
+
+  
+ 
+
 

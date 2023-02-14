@@ -10,7 +10,6 @@ body {
     height: 100vh;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
-
 }
 header {
     box-shadow: 0px 10px 20px rgb(38, 26, 132);
@@ -28,8 +27,6 @@ main {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-   
-    
 }
 .entrada{
     background-color: rgba(30, 33, 122, 0.772);
@@ -43,6 +40,8 @@ main {
     line-height: 40px;
     padding: 3%;
     font-size: 20px;
+    animation-name: animacao;
+    animation-duration: 1s;
 }
 .button {
     border-radius: 10px; 
@@ -69,10 +68,16 @@ button:hover {
     width: 300px;
     padding: 2%;
     gap: 20px;
+    animation-name: aparecer;
+    animation-duration: 1s;
 }
-#saida{
-    justify-content: left;
-    transition: all 1.0s ease-out; 
+@keyframes aparecer {
+    from { opacity: 0; margin-left:-150px;}
+    to { opacity: 1; margin-left: 0px;}
+}
+.hide{
+    margin-left:-150px ;
+    transition: 1s;
 }
 table{
     align-items:baseline;
