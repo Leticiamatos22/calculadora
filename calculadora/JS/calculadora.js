@@ -23,7 +23,8 @@ function calcular(){
     window.document.getElementById("inssSaida").innerHTML = "R$ " + inss.toFixed(2)
 
     //calculo base do IRRF
-    baseIrrf = salarioBruto - inss - 189.59 * dependentes
+    baseIrrf = salarioBruto - inss - (189.59 * dependentes)
+    console.log("base irrf" + baseIrrf)
     // calculo do IRRF
     if(baseIrrf<= 1903.98){
         irrf=0
@@ -55,7 +56,7 @@ function calcular(){
     descontos = inss + irrf + valeTransporte
     window.document.getElementById("descontosSaida").innerHTML = "R$ " + descontos.toFixed(2)
     salarioLiquido = salarioBruto - descontos
-     window.document.getElementById("salarioLiquidosaida").innerHTML = "R$ " + salarioLiquido.toFixed(2)
+    window.document.getElementById("salarioLiquidosaida").innerHTML = "R$ " + salarioLiquido.toFixed(2)
 
     //Mostrar display
     document.getElementById("saida").style.display = "flex"; 
